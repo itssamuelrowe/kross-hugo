@@ -1,11 +1,13 @@
 <div class="col-lg-4 col-sm-6 mb-4">
-  <article class="card shadow">
-    <img class="rounded card-img-top" src="{{.Params.Image | relURL}}" alt="{{.Title }}">
-    <div class="card-body">
+  <article class="card shadow-sm">
+    {{ if .Params.Image }}
+      <img class="rounded card-img-top" src="{{.Params.Image | relURL}}" alt="{{.Title }}">
+    {{ end }}
+    <div class="card-body" style="height: 280px;">
       <h4 class="card-title"><a class="text-dark" href="{{.Permalink}}">{{.Title }}</a>
       </h4>
-      <p class="cars-text">{{.Summary}}</p>
-      <a href="{{.Permalink}}" class="btn btn-xs btn-primary">Read More</a>
+      <p class="cars-text">{{ .Summary }}</p>
+      <a href="{{.Permalink}}" class="btn btn-xs" style="position: absolute; bottom: 16px; right: 16px">READ MORE</a>
     </div>
   </article>
 </div>
